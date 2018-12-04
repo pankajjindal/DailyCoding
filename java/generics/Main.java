@@ -11,7 +11,7 @@ class Generics1<T>
 } 
    
 // Driver class to test above 
-class Generics1Main 
+class Main 
 { 
     public static void main (String[] args) 
     { 
@@ -26,12 +26,9 @@ class Generics1Main
                           new Generics1<String>("GeeksForGeeks"); 
         System.out.println(sObj.getObject()); 
 
-	System.out.print("Max memory in mb " +r.maxMemory()/mb);
-        System.out.println( " in bytes " +r.maxMemory());
-        System.out.println("Intial memory" +r.totalMemory()/mb );
-        System.out.println(" in bytes " +r.totalMemory());
-        System.out.println("Free memory in mb " +r.freeMemory()/mb ); 
-        System.out.println("Free memory" +r.freeMemory() ); , 
+	System.out.println("Max memory" +r.maxMemory()/mb " in bytes " +r.maxMemory());
+        System.out.println("Intial memory" +r.totalMemory()/mb " in bytes " +r.totalMemory());
+        System.out.println("Free memory" +r.freeMemory()/mb);  
 	//System.out.println(sObj.getObject());
     } 
 }
