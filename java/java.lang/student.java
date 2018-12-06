@@ -25,7 +25,8 @@ class student {
 		System.out.println(s1.toString());
 		System.out.println(s2);
 		System.out.println(s1.equals(s2));
-		System.out.println(s1.equals(s3));
+		// even though these objects are same but since only reference is compared this is false. This method needs to be overridden.
+		System.out.println(s1.equals(s3));// even though these objects are same but since only reference is compared this is false. This method needs to be overridden.
 		System.out.println(s2.equals(s4));
 
 	}
