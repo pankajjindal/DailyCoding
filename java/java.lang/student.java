@@ -19,9 +19,14 @@ class student {
 	{
 		student s1 = new student(" ram", 101);
 		student s2 = new student ("shyam", 102);
+		student s3 = new student ("ram", 101);
+		student s4 = s2;
 		System.out.println(s1);
 		System.out.println(s1.toString());
 		System.out.println(s2);
+		System.out.println(s1.equals(s2));
+		System.out.println(s1.equals(s3));
+		System.out.println(s2.equals(s4));
 
 	}
 }
