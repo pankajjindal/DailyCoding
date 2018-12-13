@@ -1,7 +1,7 @@
 // A Simple Java program to show working of user defined 
 // Generic functions 
    
-class Test 
+class generics3 
 { 
     // A Generic method example 
     static <T> void genericDisplay (T element) 
