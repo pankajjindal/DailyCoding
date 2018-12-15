@@ -35,20 +35,22 @@ class TestMemoryMain
         System.out.println("Intial memory" +r.totalMemory()/mb );
         System.out.println(" in bytes " +r.totalMemory());
         System.out.println("Free memory in mb " +r.freeMemory()/mb ); 
-        System.out.println("Free memory" +r.freeMemory() ); , 
+        System.out.println("Free memory" +r.freeMemory() ); 
 	//System.out.println(sObj.getObject());
 
         Student s1 = new Student();
         Student s2 = new Student();
         Student s3 = new Student();
 
+        
         System.out.println("after making 3 student object");
-        System.out.print("Max memory in mb " +r.maxMemory()/mb);
-        System.out.println( " in bytes " +r.maxMemory());
-        System.out.println("Intial memory" +r.totalMemory()/mb );
-        System.out.println(" in bytes " +r.totalMemory());
-        System.out.println("Free memory in mb " +r.freeMemory()/mb ); 
-        System.out.println("Free memory" +r.freeMemory() ); , 
+        Runtime r1 = Runtime.getRuntime();
+        System.out.print("Max memory in mb " +r1.maxMemory()/mb);
+        System.out.println( " in bytes " +r1.maxMemory());
+        System.out.println("Intial memory" +r1.totalMemory()/mb );
+        System.out.println(" in bytes " +r1.totalMemory());
+        System.out.println("Free memory in mb " +r1.freeMemory()/mb ); 
+        System.out.println("Free memory" +r1.freeMemory() ); 
 
 
     } 
