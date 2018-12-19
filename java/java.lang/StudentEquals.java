@@ -1,3 +1,23 @@
+// equals can be confusing Puzzle 5 ( 3 parts)
+class StudentEquals{
+      String name;
+      int rollno;
+      //basic constructor
+      StudentEquals() 
+      //overridden for content comparison
+      public boolean equals(Object obj)
+      
+      public static void main(String[] args){
+        StudentEquals s1 = new StudentEquals(" ram", 101);
+        StudentEquals s2 = new StudentEquals ("shyam", 102);
+        StudentEquals s4 = s2;
+        System.out.println(s1.equals(s2));//a
+        System.out.println(s2.equals(s4));//b
+        System.out.println(s2.equals("shyam"));//c
+      } 
+}
+
+/*
 class StudentEquals{
       String name;
       int rollno;
@@ -25,7 +45,7 @@ class StudentEquals{
 
 
       }
-     
+
       public static void main(String[] args)
       {
 
@@ -43,6 +63,18 @@ class StudentEquals{
         System.out.println(s2.equals("shyam"));
         System.out.println(s2.equals(null));
 
-   
-      } 
+
+      }
 }
+
+Answers
+
+StudentEquals@7cdbc5d3
+StudentEquals@7cdbc5d3
+StudentEquals@3aa9e816
+false
+false
+true
+false
+false
+*/
