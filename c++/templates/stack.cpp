@@ -12,6 +12,7 @@ public:
    void push(T const& a);
    T pop();
    bool empty();
+   void emptyWhole();
    //T top();
 };
 
@@ -31,15 +32,26 @@ assert(!stack.empty());
 return stack.back();
 }
 
+template<typename T>
+void mystack<T>::emptyWhole() {
+    while(!stack.empty()){
+	 cout << stack.back() <<endl;
+         stack.pop_back();
+}
+
+}
 
 int main(){
 
    mystack<int> *s = new mystack<int>();
    s->push(2);
    s->push(1);
-
-   cout << s->pop() << endl;
-   cout << s->pop() << endl;
+   s->push(1);
+   s->push(1);
+   s->push(1);
+   s->emptyWhole();
+   //cout << s->pop() << endl;
+   //cout << s->pop() << endl;
    return 0;
    
 }
