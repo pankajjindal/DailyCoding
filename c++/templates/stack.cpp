@@ -52,6 +52,13 @@ int main(){
    s->emptyWhole();
    //cout << s->pop() << endl;
    //cout << s->pop() << endl;
+
+   using intStack = mystack<int>;
+   intStack iStack;
+ 
+   iStack.push(10);
+
+   iStack.push(11);
    return 0;
    
 }
