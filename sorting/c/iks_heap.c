@@ -1,4 +1,4 @@
-#include <stdio.h>
+  #include <stdio.h>
 
 void swap(int *a , int *b)
 {
@@ -17,12 +17,11 @@ void print_array(int *array, int n)
 
 void insert( int * arr, int size ,int value ){
      
-	int length=0;
+	int length=1;
         int index = size +1;	
 
         while( arr[length]!='\0')
         	length++;
-        length--;
 
         printf ( " index = %d, length =%d \n", index, length); 
 	if (index < length){
@@ -34,7 +33,7 @@ void insert( int * arr, int size ,int value ){
                printf( " swap %d, %d \n", index , index/2);
                index = index/2;
 	       print_array(arr,11);
-	    }
+	    }  
 	
 	}
 }
@@ -47,7 +46,7 @@ void main()
 
 	print_array(array,10);
 
-	for( int i=1; i<11;i++)
+	for( int i=1; i<=11;i++)
            insert(array, i-1,array[i]);
         	
 	//print_array(array,10);
