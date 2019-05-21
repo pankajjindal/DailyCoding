@@ -4,6 +4,8 @@
 #include <numeric>
 #include <iostream>
 #include <chrono>
+
+using namespace std;
  
 void accumulate(std::vector<int>::iterator first,
                 std::vector<int>::iterator last,
