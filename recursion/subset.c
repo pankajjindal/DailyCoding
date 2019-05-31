@@ -10,28 +10,26 @@ void printSet(char array[],int size){
     printf ( "{");
     for (i=0;i<=size;i++)
         printf ( " %c " ,array[i]);
-
     printf ( "}");
-    //printf("\n");
+    printf("\n");
     return;
 }
 
 void printMain(char array[]){
 
-	int i =0;
-    //char * output;
+    int i =0;
     if( array == NULL)
     	return;
-	while(array[i]!='\0')
-		i++;
+    while(array[i]!='\0')
+	i++;
 
-	#ifdef DEBUG
-	printf(" array allocated to be printed %d\n", i);
-	#endif
+    #ifdef DEBUG
+    printf(" array allocated to be printed %d\n", i);
+    #endif
 
-	char * output = malloc(i);
-	printSubsets(array, 0, output, 0);
-	return;
+    char * output = malloc(i);
+    printSubsets(array, 0, output, 0);
+    return;
 }
 
 void printSubsets(char array[], int i, char output[], int j ){
@@ -39,6 +37,7 @@ void printSubsets(char array[], int i, char output[], int j ){
 
 	while(array[length]!='\0')
 		length++;
+        length--;
 
     #ifdef DEBUG
 	printf(" array allocated to be subsetted %d\n", length);

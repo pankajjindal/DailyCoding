@@ -10,8 +10,10 @@ void swap(char * a, char *b)
 
 void permute( char * array, int i, int c_size)
 {
-	if( i == c_size-1)
+	if( i == c_size-1){
              printf( "%s \n" , array);
+             return;
+	}
 
 	for( int j=i ; j<=c_size-1 ; j++)
 	{	
