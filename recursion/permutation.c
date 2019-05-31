@@ -19,7 +19,7 @@ void permute( char * array, int i, int c_size)
 	{	
 		swap(&array[j],&array[i]);
 		permute(array, i+1, c_size);
-		swap(&array[i],&array[j]);
+		//swap(&array[i],&array[j]);
 	}
 
 }
@@ -27,12 +27,12 @@ void permute( char * array, int i, int c_size)
 
 main()
 {
-	char array4[4]="abcd";
-        char array5[5]="abcde";
-        char array6[6]="abcdef";
+	char array4[3]="abc";
+        //char array5[5]="abcde";
+        //char array6[6]="abcdef";
 
-	permute(array4,0,4);
-	permute(array5,0,5);
-	permute(array6,0,6);
+	permute(array4,0,3);
+	//permute(array5,0,5);
+	//permute(array6,0,6);
         
 }

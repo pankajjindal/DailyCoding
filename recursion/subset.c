@@ -7,10 +7,10 @@ void printSubsets(char array[], int i, char output[], int j );
 
 void printSet(char array[],int size){
     int i;
-    printf ( " {");
+    printf ( "{");
     for (i=0;i<=size;i++)
         printf ( " %c " ,array[i]);
-    printf ( " }");
+    printf ( "}");
     printf("\n");
     return;
 }
@@ -51,6 +51,7 @@ void printSubsets(char array[], int i, char output[], int j ){
 
 	printSubsets(array,i+1,output,j);
 	output[j]=array[i];
+	printf(" %c ", array[i]);
 	printSubsets(array,i+1,output,j+1);
 
 }

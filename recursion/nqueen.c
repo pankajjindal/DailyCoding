@@ -1,34 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void printcb(char  chessb[8][8])
 {
 
- for (int i=0;i<8;i++){
-     for( int j=0; j< 8;j++)
-	{
-	 printf( "%c" , chessb[i][j]);
-	}
-        //printf( " \n");
-	}
+ for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            //grid[i][j] = '.';
+            printf("%c ", chessb[i][j]);
+        }
+        printf("\n");
+    }
+    sleep(2);
 }
 
-
-
-void markx( char chessb[8][8] , int i , int j)
-{
-	
-        if ( i >7 || j > 7)
-	 return;
-	
-	chessb[i][j]='x';
-        
-	markx( chessb , i ,j+1);
-	markx( chessb , i+1 ,j);
-        markx( chessb , i+1 ,j+1);
-        
-        printcb(chessb);
-        
-}
 
 void nqueen(char chessb[8][8])
 {
@@ -36,12 +21,24 @@ void nqueen(char chessb[8][8])
      for( int j=0; j< 8;j++)
 	{
 
-        printcb(chessb);
 	    if( chessb[i][j] == ' '){
-		chessb[i][j] = 'q';
-                markx( chessb , i ,j+1);
-	    }
-	}
+            int p=0,q=0;
+		    chessb[i][j] = 'q';
+            for (int k=j+1; k < 8; k++) 
+                chessb[i][k] = 'x';
+            for (int h =i+1; h < 8; h++) 
+                chessb[h][j] = 'x';
+            p=i+1;
+            q=j+1;
+            while(p < 8 || q <8){
+                chessb[p][q] = 'x';
+                p++;q++;
+
+            }
+            printcb(chessb);
+        }
+        printf("\n");
+    }
 }
 
 
@@ -57,7 +54,6 @@ int main()
     {' ',' ' , ' ' , ' ', ' ',' ', ' ', ' '},
     {' ',' ' , ' ' , ' ', ' ',' ', ' ', ' '},
 };
-
    nqueen(chessb);
 }
 
