@@ -1,0 +1,49 @@
+
+/*
+ * Complete the function below.
+ */
+
+/*
+    For your reference. 
+
+    struct TreeNode
+    {
+        int val;
+        TreeNode* left_ptr;
+        TreeNode* right_ptr;
+
+        TreeNode(int _val = 0)
+        {
+            val = _val;
+            left_ptr = NULL;
+            right_ptr = NULL;
+        }
+    };
+*/
+
+
+
+stack in-order(TreeNode* root, stack s1){
+    stack s1;
+    if(root==NULL)
+      return s1;
+     
+     s1.push_back(root);
+     if(root->left ! = NULL)
+        in-order(root->left);
+     if( root->right !=NULL)
+        in-order(root->right);
+     
+}
+
+int kth_smallest_element(TreeNode* root, int k) {
+    in_order_traversal(tree);
+    
+    while(k>0){
+        s1.pop();
+        k--;
+    }
+    
+    retrn s1.pop;
+
+}

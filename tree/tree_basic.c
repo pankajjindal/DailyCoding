@@ -58,7 +58,48 @@ int compute(struct node *root)
      return left+right+root->key;
     
 }
+
+int height(struct * node root, int h)
+{
+    if( root == NULL)
+        return ;
+
+    if( root->left != NULL)
+        printEachLevel(root->left,h+1);
+
+    if( root->right != NULL)
+        printEachLevel(root->right,h+1);
+
+    return h;
+}
    
+void printEachLevel(struct node *root, int i){
+    if( root== NULL)
+        return;
+
+    if( i==0){
+        printf( root->value);
+        return;
+    }
+    if( root->left != NULL)
+        printEachLevel(root->left,i-1);
+
+    if( root->right != NULL)
+        printEachLevel(root->right,i-1);
+
+}
+
+void bfsprint( struct node *root)
+{
+    int h;
+    if( root==NULL)
+        return;
+    h = height(root);
+    for( int i =0;i< h;i++)
+    {
+        printEachLevel(root,i);
+    }
+}
 // Driver Program to test above functions 
 int main() 
 { 
