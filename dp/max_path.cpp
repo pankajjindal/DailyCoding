@@ -8,21 +8,26 @@
 
 int table[ROW][COL];
 
-int max_path_recursion( int grid[][COL], int row, int col)
+int grid[ROW][COL] = {{2,3},
+						  {4,11}};
+
+int max_path_recursion( int row, int col)
 {
 
 	if ((row >= ROW) || (col >= COL))
 		return 0;
 
-	return (grid[row][col] + std::max(max_path_recursion( &grid[COL], row +1 , col ) ,max_path_recursion( &grid[COL], row , col + 1 )));
+	if ((row == ROW-1) && (col == COL-1))
+		return grid[row][col];
+
+	return (grid[row][col] + std::max(max_path_recursion( row +1 , col ) ,max_path_recursion( row , col + 1 )));
 
 }
 
 
 int main(){
-	int grid[ROW][COL] = {{2,3},
-						  {4,11}};
-	std::cout << max_path_recursion(&grid[COL] , 0, 0 ) << std::endl;
+	
+	std::cout << max_path_recursion( 0, 0 ) << std::endl;
 
 	return 0;
 
