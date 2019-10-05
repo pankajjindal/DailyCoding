@@ -43,9 +43,10 @@ T Stack<T>::peek() {
 
 int main()
 {
-	Stack<int> s(10) ;
+	Stack<int> s ;
 	s.push(10);
 
+	cout << s.pop();
 	cout << s.pop();
 }
 
