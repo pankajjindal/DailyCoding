@@ -1,0 +1,52 @@
+#include <iostream>
+#include <vector>
+#include <linux/can.h>
+#include <map>
+
+auto makeCanFrame =  [](std::vector<unsigned int> &bytes)-> canfd_frame {
+												        canfd_frame frame;
+													frame.can_id = bytes[0];
+													frame.data[0] = bytes[1];
+													frame.data[0] = bytes[2];
+													frame.data[1] = bytes[3];
+													frame.data[2] = bytes[4];
+													frame.data[3] = bytes[5];
+													frame.data[4] = bytes[6];
+													frame.data[5] = bytes[7];
+													frame.data[6] = bytes[8];
+													frame.data[7] = bytes[9];
+												    return frame;};
+
+
+
+class Frame {
+public:
+	Frame() {
+		std::vector<unsigned int> test = {0x98EEFF3E, 0x8, 0x9d, 0x88, 0x21, 0x04, 0x18, 0x80, 0x0c, 0x20};
+		canFrames["ADDRESS_CLAIM1"]      = makeCanFrame(test);
+		canFrames["ADDRESS_CLAIM"]      = makeCanFrame(std::vector<unsigned int>{0x98EEFF3E, 0x8, 0x9d, 0x88, 0x21, 0x04, 0x18, 0x80, 0x0c, 0x20});
+        canFrames["NOZZLE_CONFIG"]      = makeCanFrame({0x8CFFF43E, 0x8, 0x29, 0x00, 0x10, 0x05, 0x00, 0x20, 0x00, 0x00});
+		canFrames["IPM_NOZZLE_CMD"]     = makeCanFrame({0x8CFFF43E, 0x8, 0x30, 0x00, 0x55, 0x05, 0x00, 0x00, 0x00, 0x00});
+		canFrames["IPM_CONFIDENCE_CMD"] = makeCanFrame({0x8CFFF43E, 0x8, 0x32, 0x00, 0x55, 0x05, 0x00, 0x00, 0x00, 0x00});
+		canFrames["NOZZLE_CMD"]         = makeCanFrame({0x0CFFF43E, 0x8, 0x18, 0x00, 0x55, 0x05, 0x00, 0x00, 0x00, 0x00});
+		canFrames["NOZZLE_LED_CFG"]     = makeCanFrame({0x0CFFF43E, 0x8, 0x01, 0x15, 0xE2, 0x50, 0x12, 0xFF, 0xFF, 0xFF});
+		canFrames["NOZZLE_SYS_CTRLS"]   = makeCanFrame({0x08FFFA3E, 0x8, 0x01, 0x18, 0xC7, 0x0A, 0x00, 0x7D, 0x00, 0x7D});
+		canFrames["NOZZLE_LED_CMD"]     = makeCanFrame({0x08FFFA3E, 0x8, 0x19, 0x00, 0x15, 0x00, 0x00, 0x00, 0x00, 0x00});
+		canFrames["NOZZLE_SYS_CTRLS2"]  = makeCanFrame({0x18FFF43E, 0x8, 0x17, 0x00, 0xF4, 0x7E, 0x00, 0x00, 0x00, 0x00});
+		canFrames["NOZZLE_SYS_CTRLS2"]  = makeCanFrame({0x8CFFF43E, 0x8, 0x30, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00});
+
+	}
+
+	std::map<std::string, struct canfd_frame > canFrames;
+private:
+
+};
+
+
+int main()
+{
+
+std::unique_ptr<Frame> myframe = std::make_unique<Frame> ();
+
+
+}
