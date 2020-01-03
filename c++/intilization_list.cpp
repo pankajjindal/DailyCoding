@@ -1,29 +1,35 @@
 #include <iostream>
 
-class Test{
+using namespace std;
+
+class test{
 
 public:
 test(int,int);
-test(std::intilizer_list<int>);
+test(std::initializer_list<int>);
+explicit test(int,int,int){
+
+cout << "this calls explicit" << endl;
+}
 
 };
 
-void test(int a,int b ){
-cout << "this calls int ,int" << a <<" "<< b<< endl;
+test::test(int a,int b ){
+cout << "this calls int ,int" << endl;
 }
 
-void test(std::intilizer_list<int l>){
+test::test(std::initializer_list<int> a){
+cout << "this calls initializer list " << endl;
 
-std::<intilizer_list::iterator iter;
+}
 
-for( iter = l.start() ;iter != l.end();iter++
+int main()
 {
-	cout << iter << endl;
-}
+   test t(2,3);
+   test t1{2,3};
+   test t2{2,3,4};
+   test s= {77,55};
+   test s1= {77,55,66};
+   return 0;
 
-}
-
-main()
-[
-Test t(2,3);
 }

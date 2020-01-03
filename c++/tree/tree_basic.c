@@ -59,10 +59,17 @@ int compute(struct node *root)
     
 }
 
+
+
 int height(struct * node root, int h)
 {
+    static int max =0;
+
     if( root == NULL)
         return ;
+
+    if( max < h)
+        max =h;
 
     if( root->left != NULL)
         printEachLevel(root->left,h+1);
@@ -70,7 +77,7 @@ int height(struct * node root, int h)
     if( root->right != NULL)
         printEachLevel(root->right,h+1);
 
-    return h;
+    return max;
 }
    
 void printEachLevel(struct node *root, int i){
