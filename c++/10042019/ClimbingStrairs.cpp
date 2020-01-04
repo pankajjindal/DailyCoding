@@ -7,6 +7,11 @@
 
 // A C program to count number of ways to reach n't stair when 
 // a person can climb 1, 2, ..m stairs at a time 
+
+//Answer : This is commonly equal to fibonacci number because one can only clibm 1,2 staris 
+// so the fib is 1,1,2,3,5,8,13,.....
+//  here we have to add one each time to the totak strais so if two strairs then fib(3) is the answer
+
 #include<stdio.h> 
   
 // A recursive function used by countWays 
@@ -32,7 +37,7 @@ int countWays(int s, int m)
 // Driver program to test above functions 
 int main () 
 { 
-    int s = 4, m = 2; 
+    int s = 4, m = 3; 
     printf("Nuber of ways = %d", countWays(s, m)); 
     return 0; 
 } 
