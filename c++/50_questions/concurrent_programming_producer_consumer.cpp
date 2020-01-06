@@ -50,8 +50,9 @@ public:
     void run() {
         while (true) {
             int num = std::rand() % 100;
-            buffer_->add(num);
             cout_mu.lock();
+            buffer_->add(num);
+            //cout_mu.lock();
             std::cout << "Produced: " << num << std::endl;
             std::this_thread::sleep_for(std::chrono::milliseconds(50));
             cout_mu.unlock();
@@ -70,8 +71,9 @@ public:
     }
     void run() {
         while (true) {
-            int num = buffer_->remove();
             cout_mu.lock();
+            int num = buffer_->remove();
+            //cout_mu.lock();
             std::cout << "Consumed: " << num << std::endl;
             std::this_thread::sleep_for(std::chrono::milliseconds(50));
             cout_mu.unlock();
