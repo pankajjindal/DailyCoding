@@ -53,7 +53,6 @@ for (int i = 0; i < numBuckets; i++) {
 }
 }
 template <typename Key, typename Value>
-3
 bool HashMap<Key, Value>::containsKey(const Key& key) const {
 return findNode(key) != NULL;
 }
