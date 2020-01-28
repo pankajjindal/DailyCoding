@@ -20,3 +20,14 @@ public:
     }
 };
 
+//////////////////////
+
+class Solution {
+public:
+    int reverse(int x) {
+        signed long ans = 0;
+        for(; x != 0; x /= 10)
+            ans = ans * 10 + x%10;
+        return (ans < INT_MIN || ans > INT_MAX) ? 0 : ans;
+    }
+};
