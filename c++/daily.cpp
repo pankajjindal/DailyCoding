@@ -218,4 +218,38 @@ int main()
 
 }
 ============================================================================
-~                                        
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+        char * day1 = "Monday";
+        char * day2 = "Tuesday";
+        char * day3 = "Wednesday";
+        char * day4 = "Thursday";
+        char * day5 = "Friday";
+        char * day6 = "Saturday";
+        char * day7 = "SUnday";
+        char ** week;
+
+        week = (char **)malloc ( sizeof(char*) * 7);
+        if( week == NULL){
+                fprintf(stderr,"not enough memeory");
+                return 0;
+        }
+        *(week+0) = day1;
+        *(week+1) = day2;
+        *(week+2) = day3;
+        *(week+3) = day4;
+        *(week+4) = day5;
+        *(week+5) = day6;
+        *(week+6) = day7;
+
+        for( int x=0;x<7;x++){
+            printf( " day %d =%s \n",x,week[x]);
+        }
+
+}
+==================================================================================
+                                        
